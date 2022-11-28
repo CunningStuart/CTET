@@ -51,13 +51,9 @@ def get_min_height(board):
 
 def get_average_height(board):
     average = 0
-
     for col in board.T:
         average += 19 - \
             (next((i for i, x in enumerate(col) if x == 1), 20) - 1)
-        #print(f"{19 - (next((i for i,x in enumerate(col) if x == 1),20) - 1)},", end="")
-
-    # print()
 
     return average / 10
 
@@ -72,14 +68,6 @@ def get_roughness(board):
             (next((i for i, x in enumerate(t_board[c + 1]) if x == 1), 20) - 1)
         total_roughness += abs(col1 - col2)
     return total_roughness
-
-
-"""def get_col_heights(board, max_row):
-    col_heights = {}
-
-    for row in range(max_row,20):
-
-    return col_heights"""
 
 
 class Board:
